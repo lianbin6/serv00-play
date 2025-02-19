@@ -21,10 +21,11 @@ bash <(curl -Ls https://raw.githubusercontent.com/frankiejun/serv00-play/main/st
 | TELEGRAM_TOKEN  | 略     | telegram 机器人的 token (发送 TG 消息必选)                                       |
 | TELEGRAM_USERID | 略     | 待通知的 teltegram 用户 ID (发送 TG 消息必选)                                    |
 | WXSENDKEY       | 略     | server 酱的 sendkey，用于接收微信消息 (发送微信消息必选)                         |
-| SENDTYPE        | 3      | 选择推送方式，1.Telegram, 2.微信, 3.都有 (发送消息必选)                          |
+| SENDTYPE        | 1      | 选择推送方式，1.Telegram, 2.微信, 3.都有 (发送消息必选)                          |
 | BUTTON_URL      | 略     | 设置 TG 推送消息中的按钮链接 (发送 TG 消息可选),支持#HOST，#USER，#PASS 等变量。 |
 | AUTOUPDATE      | Y/N    | 设置是否自动更新服务器上的代码,设置在 variable 变量中，值为 Y/N(默认: Y)         |
 | LOGININFO       | Y/N    | 在 variable 变量中设置(默认为 N)，Y:发送登录汇总消息 N:只在登录失败时发送        |
+| TOKEN           | 123456 | 网页保活(keepalive)的密钥(必选)                                                  |
 
 各主机保活时可不必输入消息通知参数，由 github 同一配置参数。
 
@@ -38,6 +39,8 @@ bash <(curl -Ls https://raw.githubusercontent.com/frankiejun/serv00-play/main/st
 4.自动更新 serv00-play 代码  
 5.同步更新 telegram、微信等参数  
 6.默认情况下只有登录失败才有 TG 消息通知，提醒可能封号(平时正常不会给你发消息，发消息之时便是你封号之日)
+也可以设定 LOGININFO=Y，每次保活都会做汇总通知(但相信我，你不会喜欢这个功能)
+7.keepalive 保活虽然不做 ssh 登录，但一样有延续服务器有效期的效果(不再需要 3 月一登)。
 
 ## 消息推送
 
@@ -91,6 +94,8 @@ _捐赠将是对我最大的支持，它将激励我持续的创新和创作。_
 
 [nekohasekai](https://github.com/SagerNet/sing-box)、[AlistGo](https://github.com/AlistGo/alist)、[9seconds](https://github.com/9seconds/mtg)、[eooce](https://github.com/eooce)、[nrootconauto](https://github.com/nrootconauto/MrChrootBSD)、[nezhahq](https://github.com/nezhahq/agent)、[huashengdun](https://github.com/huashengdun/webssh)、[hslr-s](https://github.com/hslr-s/sun-panel)  
 [yangtb2024](https://github.com/yangtb2024/OneTimeMessagePHP)
+
+测试人员: [ryty1](https://github.com/ryty1), [fgr178707](https://github.com/fgr178707)
 
 ## 免责声明
 
